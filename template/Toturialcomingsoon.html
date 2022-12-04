@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python notes</title>
+     <style>
+        .sidebar {
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            background-color: #f1f1f1;
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+          }
+          
+          /* Sidebar links */
+          .sidebar a {
+            display: block;
+            color: black;
+            padding: 6px;
+            font-size: 17px;
+            text-decoration: none;
+          }
+          
+          /* Active/current link */
+          .sidebar a.active {
+            background-color: #04AA6D;
+            color: white;
+          }
+          
+          /* Links on mouse-over */
+          .sidebar a:hover:not(.active) {
+            background-color: #555;
+            color: white;
+          }
+          
+          /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+          div.content {
+            margin-left: 200px;
+            padding: 1px 16px;
+            height: 100%px;
+          }
+          
+          /* On screens that are less than 700px wide, make the sidebar into a topbar */
+          @media screen and (max-width: 700px) {
+            .sidebar {
+                display: none;
+            }
+            .sidebar a {float: left;}
+            div.content {margin-left: 0;}
+          }
+          
+          /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+          @media screen and (max-width: 400px) {
+            .sidebar a {
+              text-align: center;
+              float: none;
+            }
+          }
+          
+    </style> 
+</head>
+<body>
+    {% extends 'header_footer.html' %}
+    
+    {% block body %}
+<div class="sidebar">
+    <h4>Python Tutorial</h4>
+    <a class="active" href="#home">Python Home</a>
+    <a href="#news">Python Intro</a>
+    <a href="#about">Python Syntax</a>
+    <a href="#">Python Comments</a>
+    <a href="#">Python Data Types</a>
+    <a href="#">Python Numbers</a>
+    <a href="#">Python Casting</a>
+    <a href="#">Python Operators</a>
+    <a href="#">Python Strings</a>
+    <a href="#">Python Lists</a>
+    <a href="#">Python Tuples</a>
+    <a href="#">Python Sets</a>
+    <a href="#">Python Dictionies</a>
+    <a href="#">Python Condition Statement</a>
+    <a href="#">Python If statement</a>
+    <a href="#">Python if else statement</a>
+    <a href="#">Python elif statement</a>
+    <a href="#">Python nexted if statement</a>
+    <a href="#">Python looping</a>
+    <a href="#">Python while loop</a>
+    <a href="#">Python for loop</a>
+    <a href="#">Python range function</a>
+    <a href="#">Python loop with else</a>
+  </div> 
+  
+  <!-- Page content -->
+  <div class="content">
+<!--  
+        <h1>Tutorial <span style="color: #b100e2;">Coming Soon</span></h1>
+        <h2 style="color:blue">We are preparing data..</h2>
+    <img src="/static/comingsoon.avif" alt="" srcset="">
+    <h1><span style="color: #b101e2;">SORRY FOR LATE. {{Python_data.heading}}</span></h1> -->
+
+      
+      {% for x in Python_data %}
+        <h3>{{x.heading}}</h3>
+        <pre>{{x.description}}</pre>
+
+      {% endfor %}
+
+    {{n}}
+ 
+  </div>
+   
+{% endblock %}
+</body>
+</html>

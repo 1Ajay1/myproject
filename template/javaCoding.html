@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Coding Question</title>
+</head>
+<body>
+    {% extends 'header_footer.html' %}
+    
+    {% block body %}
+    <div class="album py-2 bg-light">
+        <h1 class="fw-light text-center fw-normal fst-italic text-primary">Importent Java Coding Questions</h1>
+    
+        {% for i in questionAnswer%} 
+<div>     
+<strong class="ps-4 h3 text-dark">Question {{ forloop.counter}} :-{{i.Question}} ?</strong>
+<pre class="card-text text-white h5 border border-5 border-dark rounded-3 m-4"style="background-color: #081126;">
+Solution:-
+{{i.Solution}}
+</pre>
+</div>   
+        <div class="album m-4 text-white h4 border border-5 border-#0d6efd rounded-3 bg-dark">
+            <div class="row">
+<div class="col border border-right border-light">
+<pre>
+Input 1:- 
+    {{i.answer1}}
+</pre>
+</div>
+<div class="col border border-right border-light">
+<pre>
+Input 2:- 
+    {{i.answer2}} 
+</pre>
+</div>
+<div class="col">
+    <pre>
+Input 3:- 
+    {{i.answer3}}
+    </pre>
+</div>
+</div>
+          </div>
+                
+        {%endfor%}
+       
+    </div>
+
+    
+
+
+    {% endblock %}
+</body>
+</html>
